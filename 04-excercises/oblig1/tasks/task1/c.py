@@ -8,14 +8,26 @@ plt.rcParams.update({
     "pgf.rcfonts": False,
 })
 
-x = np.linspace(-5, 5, 400)
-y = x**2
+w=.7
+R=20
+h=1.5
+
+t = np.linspace(0, 7, 100)
+
+x_a = R * np.cos(w * t + 3*np.pi/2)
+y_a = R * np.sin(w * t + 3*np.pi/2)
+
+x_b = 12.95 * t
+y_b = h - R + 6 * t
 
 plt.figure()
-plt.plot(x, y, label=r"$x^2$")
+plt.plot(x_a, y_a, label=r"$\vec{r}_a$")
+plt.plot(x_b, y_b, label=r"$\vec{r}_b$")
+
 plt.xlabel(r"$x$")
 plt.ylabel(r"$y$")
 plt.legend()
+plt.gca().set_aspect('equal', adjustable='box')
 plt.tight_layout()
 
 plt.savefig("c.pgf")
