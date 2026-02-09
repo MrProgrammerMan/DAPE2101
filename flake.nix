@@ -41,13 +41,6 @@
             '';
           };
       };
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [
-          python314
-          python314Packages.matplotlib
-          python314Packages.numpy
-        ];
-      };
     };
   };
 }
