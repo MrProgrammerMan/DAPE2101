@@ -19,7 +19,7 @@
           oblig1 = pkgs.stdenv.mkDerivation {
             name = "Obligatory assigment 1 - DATA2410";
             src = ./04-excercises/oblig1;
-            buildInputs = [
+            nativeBuildInputs = [
               tex
               pkgs.python314
               pkgs.python314Packages.matplotlib
