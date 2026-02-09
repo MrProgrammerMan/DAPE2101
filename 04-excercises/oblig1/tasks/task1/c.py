@@ -18,5 +18,5 @@ plt.ylabel(r"$y$")
 plt.legend()
 plt.tight_layout()
 
-plt.savefig("1c.pgf")
+plt.savefig("c.pgf")
 plt.close()

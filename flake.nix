@@ -27,8 +27,7 @@
             buildPhase = ''
               cp -r $src/* . #This is hella dumb, but include doesn't work otherwise
               chmod +600 ./tasks/task1
-              cp ${self'.packages.task1cplot}/1c.pgf ./tasks/task1
-              ls ./tasks/task1
+              cp ${self'.packages.task1cplot}/c.pgf ./tasks/task1
               latexmk -pdf -interaction=nonstopmode main.tex
             '';
             installPhase = ''
@@ -41,7 +40,7 @@
             pname = "task1cplot";
             version = "1.0";
 
-            src = ./04-excercises/oblig1/tasks/plots/1c;
+            src = ./04-excercises/oblig1/tasks/task1;
 
             nativeBuildInputs = [
               pkgs.python314
@@ -56,12 +55,12 @@
               export MPLCONFIGDIR=$PWD/.matplotlib
               mkdir -p $MPLCONFIGDIR
               cp -r $src/* .
-              python plot.py
+              python c.py
             '';
 
             installPhase = ''
               mkdir -p $out
-              cp 1c.pgf $out/
+              cp c.pgf $out/
             '';
           };
       };
