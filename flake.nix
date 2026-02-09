@@ -24,7 +24,6 @@
               pkgs.python314
               pkgs.python314Packages.matplotlib
               pkgs.python314Packages.numpy
-              pkgs.tree
             ];
             phases = [ "buildPhase" "installPhase"];
             buildPhase = ''
