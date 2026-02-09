@@ -21,46 +21,23 @@
             src = ./04-excercises/oblig1;
             buildInputs = [
               tex
-              self'.packages.task1cplot
+              pkgs.python314
+              pkgs.python314Packages.matplotlib
+              pkgs.python314Packages.numpy
+              pkgs.tree
             ];
             phases = [ "buildPhase" "installPhase"];
             buildPhase = ''
+              export MPLCONFIGDIR=$PWD/.matplotlib
+              mkdir -p $MPLCONFIGDIR
               cp -r $src/* . #This is hella dumb, but include doesn't work otherwise
-              chmod +600 ./tasks/task1
-              cp ${self'.packages.task1cplot}/c.pgf ./tasks/task1
+              chmod -R +600 tasks
+              find tasks -name '*.py' -execdir python {} \;
               latexmk -pdf -interaction=nonstopmode main.tex
             '';
             installPhase = ''
               mkdir -p $out
               cp main.pdf $out/
-            '';
-          };
-
-          task1cplot = pkgs.stdenv.mkDerivation {
-            pname = "task1cplot";
-            version = "1.0";
-
-            src = ./04-excercises/oblig1/tasks/task1;
-
-            nativeBuildInputs = [
-              pkgs.python314
-              pkgs.python314Packages.matplotlib
-              pkgs.python314Packages.numpy
-              tex
-            ];
-
-            phases = [ "buildPhase" "installPhase" ];
-
-            buildPhase = ''
-              export MPLCONFIGDIR=$PWD/.matplotlib
-              mkdir -p $MPLCONFIGDIR
-              cp -r $src/* .
-              python c.py
-            '';
-
-            installPhase = ''
-              mkdir -p $out
-              cp c.pgf $out/
             '';
           };
       };
