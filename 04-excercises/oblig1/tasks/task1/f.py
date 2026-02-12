@@ -18,12 +18,14 @@ t_point = 1.306772601
 x_a = R * np.cos(w * t + 3*np.pi/2)
 y_a = R * np.sin(w * t + 3*np.pi/2)
 
-x_b = 12.95 * t
+x_b = -w * (h - R) * t
 y_b = h - R + 6 * t
 
+# Avstanden i vektorform
 dist_x = x_a - x_b
 dist_y = y_a - y_b
 
+# Absolutt avstand
 dist = np.sqrt(dist_x**2 + dist_y**2)
 
 dist_point = np.sqrt((R * np.cos(w * t_point + 3*np.pi/2) - 12.95 * t_point)**2 +

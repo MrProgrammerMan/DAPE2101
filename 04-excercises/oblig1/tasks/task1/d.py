@@ -17,24 +17,26 @@ t = np.linspace(0, 2, 100)
 x_a = R * np.cos(w * t + 3*np.pi/2)
 y_a = R * np.sin(w * t + 3*np.pi/2)
 
-x_b = 12.95 * t
+x_b = -w * (h - R) * t
 y_b = h - R + 6 * t
 
-t_point = 1.306772601
-x_a_point = R * np.cos(w * t_point + 3*np.pi/2)
-y_a_point = R * np.sin(w * t_point + 3*np.pi/2)
-x_b_point = 12.95 * t_point
-y_b_point = h - R + 6 * t_point
+t_f = 1.306772601
+x_a_point = R * np.cos(w * t_f + 3*np.pi/2)
+y_a_point = R * np.sin(w * t_f + 3*np.pi/2)
+x_b_point = 12.95 * t_f
+y_b_point = h - R + 6 * t_f
 
 plt.figure()
+# Banene til astronauten og ballen
 plt.plot(x_a, y_a, label=r"$\vec{r}_a$")
 plt.plot(x_b, y_b, label=r"$\vec{r}_b$")
 
+# Punkter til astronauten og ballen ved t=T_f
 plt.scatter(x_a_point, y_a_point, color='blue', zorder=5)
 plt.scatter(x_b_point, y_b_point, color='red', zorder=5)
 
-plt.text(x_a_point + 0.5, y_a_point + 0.5, r"$a$ ved $t\approx1.3$", color='blue')
-plt.text(x_b_point + 0.5, y_b_point + 0.5, r"$b$ ved $t\approx1.3$", color='red')
+plt.text(x_a_point + 0.5, y_a_point + 0.5, r"$a$ ved $T_f$", color='blue')
+plt.text(x_b_point + 0.5, y_b_point + 0.5, r"$b$ ved $T_f$", color='red')
 
 plt.gca().set_title(r"$\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 2]$")
 plt.grid(True, which='both', linestyle='--', linewidth=0.7, alpha=0.7)

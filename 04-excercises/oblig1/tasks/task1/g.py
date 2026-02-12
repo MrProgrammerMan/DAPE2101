@@ -17,7 +17,7 @@ t = np.linspace(0, 5, 100)
 x_a = R * np.cos(w * t + 3*np.pi/2)
 y_a = R * np.sin(w * t + 3*np.pi/2)
 
-x_b = 12.95 * t
+x_b = -w * (h - R) * t
 y_b = h - R + 6 * t
 
 theta_a = np.arctan2(y_a, x_a)
