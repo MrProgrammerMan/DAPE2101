@@ -17,7 +17,7 @@
           ]));
         in {
           oblig1 = pkgs.stdenv.mkDerivation {
-            name = "Obligatory assigment 1 - DATA2410";
+            name = "Obligatory assigment 1 - DAPE2101";
             src = ./04-excercises/oblig1;
             nativeBuildInputs = [
               tex
