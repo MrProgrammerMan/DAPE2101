@@ -1,8 +1,50 @@
 \subsubsection{a}
 
-Brukt formel $a = \omega^2 r$
+Vi modellerer ionene som punktladninger med ladning $+e$ og $-e$. Coulombs lov gir kraften mellom ladningene:
+\begin{align}
+\vec{F}_c = k_e \frac{qQ}{r^2} \,\hat{e}_r
+\end{align}
+
+Den potensielle energien kan finnes fra:
+\begin{align}
+E_p(b) - E_p(a) = - \int_a^b \vec{F} \cdot d\vec{s}
+\end{align}
+
+Vi velger referansepunkt $a = \infty$, hvor $E_p(\infty) = 0$, og $b = r$:
+\begin{align}
+E_p(r) = - \int_{\infty}^{r} \vec{F}_c \cdot d\vec{s}
+\end{align}
+
+Siden bevegelsen skjer i radiell retning, kan vi sette $d\vec{s} = \hat{e}_r \, dr$:
+\begin{align}
+E_p(r) = - \int_{\infty}^{r} k_e \frac{qQ}{r^2} \,\hat{e}_r \cdot \hat{e}_r \, dr
+\end{align}
+
+Siden $\hat{e}_r \cdot \hat{e}_r = 1$, får vi:
+\begin{align}
+E_p(r) = - k_e qQ \int_{\infty}^{r} \frac{1}{r^2} \, dr
+\end{align}
+
+Integralet gir:
+\begin{align}
+E_p(r) = - k_e qQ \left[ -\frac{1}{r} \right]_{\infty}^{r} = k_e \frac{qQ}{r}
+\end{align}
+
+Setter inn verdier:
+\begin{align}
+qQ = -(1.602 \cdot 10^{-19}\,\text{C})^2
+\end{align}
 
 \begin{align}
-a &= \omega^2 r \implies \omega = \sqrt{\frac{a}{r}} \\[2mm]
-\omega &= \sqrt{\frac{9.81}{20}} \ \mathrm{s^{-1}} \approx .7 \mathrm{s^{-1}}
+r = 2.36 \cdot 10^{-10}\,\text{m}, \quad k_e = 8.99 \cdot 10^9\,\text{Nm}^2/\text{C}^2
+\end{align}
+
+\begin{align}
+E_p(r) = \frac{(8.99 \cdot 10^9)\cdot (-(1.602 \cdot 10^{-19})^2)}{2.36 \cdot 10^{-10}}
+\approx -9.78 \cdot 10^{-19}\,\text{J}
+\end{align}
+
+Omregnet til elektronvolt:
+\begin{align}
+E_p \approx -6.1\,\text{eV}
 \end{align}
