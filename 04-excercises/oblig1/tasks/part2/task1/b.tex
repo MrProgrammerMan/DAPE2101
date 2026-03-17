@@ -1,12 +1,23 @@
 \subsubsection{b}
 
-Brukt formel $v = \omega r$
+Vi ønsker nå at partikkelen skal akselerere nedover som om den var på månen. Da må vi ta hensyn til forskjellen mellom tyngdeakselerasjonen på jorda og på månen.
 
+Den totale kraften blir:
 \begin{align}
-\vec{v}_b &= 
-\begin{pmatrix} \omega r \\ 6 \end{pmatrix} \mathrm{m/s} \\[1em]
-\vec{v}_b &= 
-\begin{pmatrix} 0.7 \cdot (1.5 - 20) \\ 6 \end{pmatrix} \mathrm{m/s} \\[1em]
-\vec{v}_b &= 
-\begin{pmatrix} 12.95 \\ 6 \end{pmatrix} \mathrm{m/s}
+F = -mg_j + mg_m
+\end{align}
+
+Setter dette inn i uttrykket for ladning:
+\begin{align}
+Q = \frac{F}{E} = \frac{-mg_j + mg_m}{E} = \frac{m(g_m - g_j)}{E}
+\end{align}
+
+Vi bruker verdiene:
+\begin{align}
+g_j = -9.81\,\text{m/s}^2, \quad g_m = -1.625\,\text{m/s}^2
+\end{align}
+
+Setter inn tallverdier:
+\begin{align}
+Q = \frac{0.02\,\text{kg} \cdot (-1.625 + 9.81)\,\text{m/s}^2}{100\,\text{N/C}} = 1.637 \cdot 10^{-3}\,\text{C}
 \end{align}
