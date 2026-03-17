@@ -29,7 +29,7 @@ plt.figure()
 plt.plot(0, 0, 'ro', label='Astronaut')
 plt.plot(x_b_ref, y_b_ref, label='Ball')
 
-plt.gca().set_title("Ballens bevegelse fra astronautens perspektiv for $t \in [0, 5]$")
+plt.gca().set_title(r"Ballens bevegelse fra astronautens perspektiv for $t \in [0, 5]$")
 plt.grid(True, which='both', linestyle='--', linewidth=0.7, alpha=0.7)
 plt.xlabel(r"$x$")
 plt.ylabel(r"$y$")
