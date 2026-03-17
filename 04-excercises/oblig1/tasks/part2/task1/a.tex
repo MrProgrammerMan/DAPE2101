@@ -1,8 +1,72 @@
 \subsubsection{a}
 
-Brukt formel $a = \omega^2 r$
-
+Brukt formel:
 \begin{align}
-a &= \omega^2 r \implies \omega = \sqrt{\frac{a}{r}} \\[2mm]
-\omega &= \sqrt{\frac{9.81}{20}} \ \mathrm{s^{-1}} \approx .7 \mathrm{s^{-1}}
+\vec{E} = \frac{\vec{F}}{Q}
 \end{align}
+
+som gir
+\begin{align}
+Q = \frac{\vec{F}}{\vec{E}}
+\end{align}
+
+Siden vi kun ser på bevegelse i én dimensjon, kan vi forenkle uttrykket ved å se bort fra vektorformen.
+
+For at partikkelen skal være i ro, må den elektriske kraften balansere tyngdekraften. Det vil si:
+\begin{align}
+F = -mg
+\end{align}
+
+Setter vi dette inn i uttrykket for ladning, får vi:
+\begin{align}
+Q = \frac{-mg}{E}
+\end{align}
+
+Setter inn verdiene:
+\begin{align}
+Q = \frac{-(0.02\,\text{kg})(-9.81\,\text{m/s}^2)}{100\,\text{N/C}} = 1.962 \cdot 10^{-3}\,\text{C}
+\end{align}
+
+Partikkelen må ha motsatt ladning av den øverste platen for at kraften skal virke oppover og balansere tyngdekraften.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Stealth, thick]
+
+  % Øverste plate (positiv)
+  \fill[gray!30] (-2, 1.5) rectangle (2, 1.8);
+  \draw[thick] (-2, 1.5) -- (2, 1.5);
+  \foreach \x in {-1.6,-1.0,-0.4,0.2,0.8,1.4} {
+    \node at (\x, 1.65) {\small$+$};
+  }
+  \node[right] at (2.1, 1.65) {$+$};
+
+  % Nederste plate (negativ)
+  \fill[gray!30] (-2, -1.8) rectangle (2, -1.5);
+  \draw[thick] (-2, -1.5) -- (2, -1.5);
+  \foreach \x in {-1.6,-1.0,-0.4,0.2,0.8,1.4} {
+    \node at (\x, -1.65) {\small$-$};
+  }
+  \node[right] at (2.1, -1.65) {$-$};
+
+  % Elektriske feltlinjer
+  \foreach \x in {-1.4,-0.7,0.0,0.7,1.4} {
+    \draw[->, gray, thin] (\x, 1.45) -- (\x, -1.45);
+  }
+  \node[right, gray] at (2.3, 0) {$\vec{E}$};
+
+  % Partikkel
+  \shade[ball color=blue!60] (0,0) circle (0.18);
+  \node[right] at (0.22, 0) {$Q$};
+
+  % Tyngdekraft (nedover)
+  \draw[->, red, very thick] (0, -0.18) -- (0, -0.95)
+    node[right] {$\vec{G} = m\vec{g}$};
+
+  % Elektrisk kraft (oppover)
+  \draw[->, blue!80!black, very thick] (0, 0.18) -- (0, 0.95)
+    node[right] {$\vec{F}_Q$};
+
+\end{tikzpicture}
+\caption{Partikkelen i ro mellom platene. Den elektriske kraften $\vec{F}_Q$ balanserer tyngdekraften $\vec{G}$.}
+\end{figure}
