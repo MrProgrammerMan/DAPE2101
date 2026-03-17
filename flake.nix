@@ -13,7 +13,9 @@
             scheme-medium
             ps.import
             type1cm
+            float
             pgfplots
+            pgf
           ]));
         in {
           oblig1 = pkgs.stdenv.mkDerivation {
