@@ -1,9 +1,51 @@
 \subsubsection{c}
 
-Brukt parameterfremstillingene:
+Akselerasjonen i vertikal retning er gitt ved:
 \begin{align}
-\vec{r}_a &= 
-\begin{pmatrix} 20\cos{\omega t + \frac{3 \pi}{2}} \\ 20\sin{\omega t + \frac{3 \pi}{2}} \end{pmatrix} \mathrm{m} \\[1em]
-\vec{r}_b &= 
-\begin{pmatrix} 12.95 t \\ 6 t - 18.5 \end{pmatrix} \mathrm{m} \\[1em]
+a(t) = kt
+\end{align}
+
+Vi finner først farten ved å integrere akselerasjonen:
+\begin{align}
+v(t) = \int a(t)\,dt = \int kt\,dt = \frac{1}{2}kt^2 + C
+\end{align}
+
+Siden kula starter uten vertikal starthastighet, har vi $v(0)=0$, som gir $C=0$:
+\begin{align}
+v(t) = \frac{1}{2}kt^2
+\end{align}
+
+Videre finner vi posisjonen:
+\begin{align}
+s(t) = \int v(t)\,dt = \int \frac{1}{2}kt^2\,dt = \frac{1}{6}kt^3 + C
+\end{align}
+
+Med startbetingelsen $s(0)=0$ får vi:
+\begin{align}
+s(t) = \frac{1}{6}kt^3
+\end{align}
+
+Kula treffer den nederste platen når $s(t) = 0.40\,\text{m}$:
+\begin{align}
+\frac{1}{6}kt^3 = 0.40
+\end{align}
+
+Løser for $t$:
+\begin{align}
+t = \sqrt[3]{\frac{2.4}{k}}
+\end{align}
+
+Setter inn $k = 3.00\,\text{m/s}^3$:
+\begin{align}
+t = \sqrt[3]{\frac{2.4}{3.00}} \approx 0.928\,\text{s}
+\end{align}
+
+I horisontal retning er farten konstant:
+\begin{align}
+v_x = 0.50\,\text{m/s}
+\end{align}
+
+Strekningen blir da:
+\begin{align}
+s_x = v_x t = (0.50\,\text{m/s})(0.928\,\text{s}) = 0.464\,\text{m}
 \end{align}
