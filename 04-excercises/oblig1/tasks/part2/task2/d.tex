@@ -1,5 +1,38 @@
 \subsubsection{}
 
-Lorem ipsum
+Argon-atom 1 har posisjon $(0, 0)$ og argon-atom 2 har posisjon $(0, y)$.
+Avstanden mellom atomene er da $r = y$.
+
+Som vi har sett tidligere er den potensielle energien integralet av kraften som virker på partikkelen. Motsatt er altså kraften den deriverte av energien.
+
+Kraften mellom atomene er gitt ved den negative gradienten av potensialet.
+I polarkoordinater med $\hat{e}_r$ pekende fra atom 1 mot atom 2:
+
+\begin{align}
+F(r) = -\frac{dE_p}{dr} = C\left(12\frac{l_0^{12}}{r^{13}} - 6\frac{l_0^6}{r^7}\right)
+\end{align}
+
+Med $C = 1.735 \times 10^{-21}$\,J og $l_0 = 2.36 \times 10^{-10}$\,m og $r = y$:
+
+\begin{align}
+F(y) = 1.735 \times 10^{-21} \left(12\frac{(2.36 \times 10^{-10})^{12}}{y^{13}} - 6\frac{(2.36 \times 10^{-10})^{6}}{y^{7}}\right)
+\end{align}
+
+For kraften $\vec{F}_{1\to2}$ peker $\hat{e}_r$ fra atom 1 mot atom 2,
+altså i retning $(0, y)$, dvs.\ i positiv $y$-retning $\hat{j}$:
+
+\begin{align}
+\vec{F}_{1\to2} = F(y)\,\hat{j}
+\end{align}
+
+For kraften $\vec{F}_{2\to1}$ peker $\hat{e}_r$ fra atom 2 mot atom 1,
+altså i negativ $y$-retning $-\hat{j}$:
+
+\begin{align}
+\vec{F}_{2\to1} = -F(y)\,\hat{j}
+\end{align}
+
+Vi ser at $\vec{F}_{2\to1} = -\vec{F}_{1\to2}$, altså er kreftene like store og motsatt rettet.
+Newtons 3. lov er dermed overholdt.
 
 \newpage
