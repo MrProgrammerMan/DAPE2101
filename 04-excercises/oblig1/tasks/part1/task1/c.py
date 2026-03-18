@@ -12,7 +12,7 @@ w=.7
 R=20
 h=1.5
 
-t = np.linspace(0, 7, 100)
+t = np.linspace(0, 4, 100)
 
 x_a = R * np.cos(w * t + 3*np.pi/2)
 y_a = R * np.sin(w * t + 3*np.pi/2)
@@ -24,7 +24,7 @@ plt.figure()
 plt.plot(x_a, y_a, label=r"$\vec{r}_a$")
 plt.plot(x_b, y_b, label=r"$\vec{r}_b$")
 
-plt.gca().set_title(r"$\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 7]$")
+plt.gca().set_title(r"$\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 4]$")
 plt.grid(True, which='both', linestyle='--', linewidth=0.7, alpha=0.7)
 plt.xlabel(r"$x$")
 plt.ylabel(r"$y$")

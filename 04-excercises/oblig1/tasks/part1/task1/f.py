@@ -12,7 +12,7 @@ w=.7
 R=20
 h=1.5
 
-t = np.linspace(0, 3, 100)
+t = np.linspace(0, 2, 100)
 t_point = 1.306772601
 
 x_a = R * np.cos(w * t + 3*np.pi/2)
@@ -46,7 +46,7 @@ plt.annotate(
     fontsize=10
 )
 
-plt.gca().set_title(r"Avstand mellom A og B for tiden $t \in [0, 3]$")
+plt.gca().set_title(r"Avstand mellom A og B for tiden $t \in [0, 2]$")
 plt.grid(True, which='both', linestyle='--', linewidth=0.7, alpha=0.7)
 plt.xlabel(r"$t$")
 plt.ylabel(r"$avstand$")

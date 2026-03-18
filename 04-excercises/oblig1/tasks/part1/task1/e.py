@@ -12,7 +12,7 @@ w=.7
 R=20
 h=1.5
 
-t = np.linspace(0, 3, 100)
+t = np.linspace(0, 1.5, 100)
 
 # Regn ut posisjonene i kartesisk
 x_a = R * np.cos(w * t + 3*np.pi/2)
@@ -49,7 +49,7 @@ ax.scatter(theta_b_point, r_b_point, color='red', s=50, zorder=5)
 plt.text(theta_a_point + 0.5, r_a_point + 0.5, r"$a$ ved $T_f$", color='blue')
 plt.text(theta_b_point + 0.5, r_b_point + 0.5, r"$b$ ved $T_f$", color='red')
 
-ax.set_title(r"Polarplott av $\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 3]$")
+ax.set_title(r"Polarplott av $\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 1.5]$")
 ax.grid(True)
 ax.legend()
 
