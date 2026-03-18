@@ -9,7 +9,7 @@ plt.rcParams.update({
 })
 
 C  = 1.735e-21   # J
-l0 = 2.36e-10    # m (2.36 Å)
+l0 = 2.36e-10    # m
 
 # Lennard-Jones potensial
 def Ep(r):
@@ -21,7 +21,7 @@ energy = Ep(r)
 
 # Bindingslengde analytisk: R0 = 2^(1/6) * l0
 R0 = 2**(1/6) * l0
-Ep0 = -C/4
+Ep0 = Ep(R0)
 
 fig, ax = plt.subplots(figsize=(6, 4))
 

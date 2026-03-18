@@ -1,3 +1,51 @@
 \subsubsection{b}
 
+Vi finner bindingslengden der den potensielle energien er minimal, altså der systemet er i stabil likevekt.
+
+Den potensielle energien er gitt ved:
+\begin{align}
+E_p(r) = C\left[\left(\frac{l_0}{r}\right)^{12} - \left(\frac{l_0}{r}\right)^6 \right]
+\end{align}
+
+Vi skriver om uttrykket:
+\begin{align}
+E_p(r) = C\left(\frac{l_0^{12}}{r^{12}} - \frac{l_0^6}{r^6}\right)
+\end{align}
+
+For å finne minimumspunktet deriverer vi med hensyn på $r$:
+\begin{align}
+\frac{dE_p}{dr} = C\left(-12\frac{l_0^{12}}{r^{13}} + 6\frac{l_0^6}{r^7}\right)
+\end{align}
+
+Setter den deriverte lik null:
+\begin{align}
+-12\frac{l_0^{12}}{r^{13}} + 6\frac{l_0^6}{r^7} = 0
+\end{align}
+
+Faktorerer:
+\begin{align}
+6\frac{l_0^6}{r^7}\left(-2\frac{l_0^6}{r^6} + 1\right) = 0
+\end{align}
+
+Dette gir:
+\begin{align}
+2\frac{l_0^6}{r^6} = 1 \quad \Rightarrow \quad r^6 = 2l_0^6
+\end{align}
+
+Dermed får vi:
+\begin{align}
+r_0 = 2^{1/6} l_0
+\end{align}
+
+Setter inn $l_0 = 2.36\,\text{\AA}$:
+\begin{align}
+r_0 = 2^{1/6} \cdot 2.36\,\text{\AA} \approx 2.65\,\text{\AA}
+\end{align}
+
 \input{tasks/part2/task2/b.pgf}
+
+\newpage
+
+\subsubsubsection{kode}
+
+\lstinputlisting[caption={Pythonkode for oppgave b}, label={lst:taskb}]{tasks/part2/task2/b.py}
