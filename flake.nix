@@ -16,6 +16,8 @@
             float
             pgfplots
             pgf
+            titlesec
+            alphalph
           ]));
         in {
           oblig1 = pkgs.stdenv.mkDerivation {
