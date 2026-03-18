@@ -8,28 +8,24 @@ plt.rcParams.update({
     "pgf.rcfonts": False,
 })
 
-w=.7
-R=20
-h=1.5
+C = 1.735e-21   # J
+l0 = 2.36e-10   # m
 
-t = np.linspace(0, 7, 100)
+r = np.linspace(2.5e-10, 5e-10, 1000)
 
-x_a = R * np.cos(w * t + 3*np.pi/2)
-y_a = R * np.sin(w * t + 3*np.pi/2)
-
-x_b = -w * (h - R) * t
-y_b = h - R + 6 * t
+F = C * (-12 * l0**12 / r**13 + 6 * l0**6 / r**7)
 
 plt.figure()
-plt.plot(x_a, y_a, label=r"$\vec{r}_a$")
-plt.plot(x_b, y_b, label=r"$\vec{r}_b$")
+plt.plot(r * 1e10, F * 1e12, color='steelblue')
 
-plt.gca().set_title(r"$\vec{r}_a$ og $\vec{r}_b$ for $t\in[0, 7]$")
+plt.axhline(y=0, color='gray', linestyle='-', linewidth=0.8)
+
+plt.ylim(-10, 10)
+
+plt.gca().set_title(r"Lennard-Jones-kraft fra det ene argon-atomet til det andre")
 plt.grid(True, which='both', linestyle='--', linewidth=0.7, alpha=0.7)
-plt.xlabel(r"$x$")
-plt.ylabel(r"$y$")
-plt.legend()
-plt.gca().set_aspect('equal', adjustable='box')
+plt.xlabel(r"$r$ [\AA]")
+plt.ylabel(r"$F$ [pN]")
 plt.tight_layout()
 
 plt.savefig("c.pgf")
