@@ -1,1 +1,75 @@
 \subsubsection{(2)}
+
+For \aa{} løse differensialligningen numerisk trenger vi tallverdier for massen $m$ og overflatearealet $A$ til steinen.
+
+Volumet av en kule er
+\begin{align}
+V = \frac{4}{3}\pi r^3
+\end{align}
+
+Steinens masse blir da
+\begin{align}
+m = \frac{4}{3}\pi r^3 \cdot \rho
+\end{align}
+
+der $r = 4.5\,\text{cm} = 0.045\,\text{m}$ og $\rho = 2.7\,\text{g/cm}^3 = 2700\,\text{kg/m}^3$. Dette gir
+\begin{align}
+m = \frac{4}{3}\pi (0.045\,\text{m})^3 \cdot 2700\,\text{kg/m}^3 \approx 1.031\,\text{kg}
+\end{align}
+
+Overflatearealet av en kule er
+\begin{align}
+A = 4\pi r^2 = 4\pi (0.045\,\text{m})^2 \approx 2.545 \cdot 10^{-2}\,\text{m}^2
+\end{align}
+
+Videre har vi
+\begin{align}
+c &= 800\,\text{J/(kg\,K)} \\
+\varepsilon_\text{stein} &= 0.9 \\
+\varepsilon_\text{folie} &= 0.03 \\
+\sigma &= 5.67 \cdot 10^{-8}\,\text{W/(m}^2\text{K}^4)
+\end{align}
+
+Vi samler konstantene i differensialligningen i \'en faktor:
+\begin{align}
+k_\text{str} = \frac{\varepsilon \sigma A}{c\, m}
+\end{align}
+
+For steinen uten folie ($\varepsilon = 0.9$):
+\begin{align}
+k_\text{str} = \frac{0.9 \cdot 5.67 \cdot 10^{-8} \cdot 2.545 \cdot 10^{-2}}{800 \cdot 1.031} \approx 1.575 \cdot 10^{-12}\,\text{K}^{-3}\text{s}^{-1}
+\end{align}
+
+og for steinen  med folie ($\varepsilon = 0.03$) blir faktoren tilsvarende ca.\ $30$ ganger mindre:
+\begin{align}
+k_\text{str} \approx 5.249 \cdot 10^{-14}\,\text{K}^{-3}\text{s}^{-1}
+\end{align}
+
+Differensialligningen som skal løses er alts\aa{}
+\begin{align}
+\frac{dT}{dt} = -k_\text{str}\left(T^4 - T_\text{luft}^4\right)
+\end{align}
+
+\paragraph{Eulers metode.}
+Vi diskretiserer tiden i steg $\Delta t$ og oppdaterer temperaturen iterativt:
+\begin{align}
+T_{n+1} = T_n + \frac{dT}{dt}\bigg|_{T_n} \cdot \Delta t
+\end{align}
+som her blir
+\begin{align}
+T_{n+1} = T_n - k_\text{str}\left(T_n^4 - T_\text{luft}^4\right)\Delta t
+\end{align}
+
+\begin{figure}[H]
+\centering
+\input{tasks/part3/task1/2.pgf}
+\caption{}
+\end{figure}
+
+\newpage
+
+\subsubsubsection{kode}
+
+\lstinputlisting[caption={Pythonkode for oppgave b}, label={lst:taskb}]{tasks/part3/task1/2.py}
+
+\newpage
