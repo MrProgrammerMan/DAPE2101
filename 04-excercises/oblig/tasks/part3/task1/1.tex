@@ -1,1 +1,50 @@
 \subsubsection{(1)}
+
+Stefan--Boltzmanns lov gir følgende forhold:
+\begin{align}
+P = \varepsilon \sigma A T^4
+\end{align}
+
+der $P$ er effekten som str\aa{}les. Det er b\aa{}de str\aa{}ling \emph{ut} fra steinen:
+\begin{align}
+P_\text{ut} = \varepsilon \sigma A T^4
+\end{align}
+
+(der $T$ er temperaturen til steinen), og str\aa{}ling \emph{fra} luften \emph{til} steinen:
+\begin{align}
+P_\text{inn} = \varepsilon \sigma A T_\text{luft}^4
+\end{align}
+
+Vi kan legge disse sammen for \aa{} f\aa{} "netto" str\aa{}ling, alts\aa{} effekten som p\aa{}virker steinens indre energi:
+\begin{align}
+P_\text{netto} = \varepsilon \sigma A \left(T^4 - T_\text{luft}^4\right)
+\end{align}
+
+For \aa{} sette dette i sammenheng med temperaturen bruker vi følgende sammenheng:
+\begin{align}
+dU = c\, m\, dT
+\end{align}
+
+som sier at endring i indre energi, $dU$, er lik endring i temperatur, $dT$, ganget med $c\cdot m$, der $m$ er massen til steinen og $c$ er den spesifikke varmekapasiteten til granitt.
+
+Vi deler p\aa{} $dt$ (en infinitesimal endring i tid) p\aa{} begge sider:
+\begin{align}
+\frac{dU}{dt} = c\, m\, \frac{dT}{dt}
+\end{align}
+
+Med andre ord: endring i indre energi over tid er lik endring i temperatur over tid ganget med $c\cdot m$.
+
+Disse uttrykkene kan sl\aa{}s sammen. Endring i indre energi over tid er lik $-P_\text{netto}$ (fordi steinen er varmere enn omgivelsene og dermed taper energi):
+\begin{align}
+c\, m\, \frac{dT}{dt} = -P_\text{netto} = -\varepsilon \sigma A \left(T^4 - T_\text{luft}^4\right)
+\end{align}
+
+Vi løser for $\frac{dT}{dt}$ og f\aa{}r differensialligningen:
+\begin{align}
+\boxed{\;\frac{dT}{dt} = -\frac{\varepsilon \sigma A}{c\, m}\left(T^4 - T_\text{luft}^4\right)\;}
+\end{align}
+
+Siden luften har en konstant temperatur p\aa{} $T_\text{luft} = 20\,^\circ\text{C} = 293.15\,\text{K}$, kan vi sette inn tallverdien for $T_\text{luft}^4$:
+\begin{align}
+\frac{dT}{dt} = -\frac{\varepsilon \sigma A}{c\, m}\left(T^4 - 7.385 \cdot 10^{9}\,\text{K}^4\right)
+\end{align}
